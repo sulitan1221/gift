@@ -1268,6 +1268,274 @@
       animation: heartUp 1100ms ease-out forwards;
     }
 
+    .print-diploma {
+      display: none;
+    }
+
+    .diploma-svg {
+      display: none;
+      width: 100%;
+      height: 100%;
+    }
+
+    .diploma-paper {
+      position: relative;
+      box-sizing: border-box;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      padding: 6.2% 7%;
+      color: #fff8ec;
+      background:
+        radial-gradient(circle at 50% 44%, rgba(255, 214, 126, 0.24), transparent 0 19%, transparent 36%),
+        radial-gradient(circle at 18% 15%, rgba(255, 174, 127, 0.22), transparent 0 22%),
+        radial-gradient(circle at 86% 82%, rgba(255, 92, 129, 0.18), transparent 0 24%),
+        linear-gradient(135deg, #25020c 0%, #5a0619 43%, #31030f 100%);
+      border: 3px solid #f7cd7a;
+      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.22);
+      isolation: isolate;
+    }
+
+    .diploma-paper::before,
+    .diploma-paper::after {
+      content: "";
+      position: absolute;
+      inset: 18px;
+      border: 1.5px solid rgba(255, 232, 165, 0.66);
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .diploma-paper::after {
+      inset: 32px;
+      border-color: rgba(255, 248, 236, 0.18);
+    }
+
+    .diploma-ornament {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .diploma-ornament::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 51%;
+      width: 56%;
+      aspect-ratio: 1;
+      border: 2px solid rgba(247, 205, 122, 0.16);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      box-shadow:
+        0 0 0 18px rgba(247, 205, 122, 0.035),
+        0 0 0 34px rgba(255, 248, 236, 0.025);
+    }
+
+    .diploma-ornament::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, transparent 0 6%, rgba(255, 232, 165, 0.3) 6% 6.3%, transparent 6.3% 93.7%, rgba(255, 232, 165, 0.3) 93.7% 94%, transparent 94%),
+        linear-gradient(0deg, transparent 0 7%, rgba(255, 232, 165, 0.22) 7% 7.3%, transparent 7.3% 92.7%, rgba(255, 232, 165, 0.22) 92.7% 93%, transparent 93%);
+      opacity: 0.9;
+    }
+
+    .diploma-corner {
+      position: absolute;
+      width: 78px;
+      height: 78px;
+      z-index: 3;
+      border-color: #f7cd7a;
+      opacity: 0.9;
+    }
+
+    .diploma-corner:nth-of-type(1) {
+      left: 30px;
+      top: 30px;
+      border-top: 4px solid;
+      border-left: 4px solid;
+    }
+
+    .diploma-corner:nth-of-type(2) {
+      right: 30px;
+      top: 30px;
+      border-top: 4px solid;
+      border-right: 4px solid;
+    }
+
+    .diploma-corner:nth-of-type(3) {
+      right: 30px;
+      bottom: 30px;
+      border-right: 4px solid;
+      border-bottom: 4px solid;
+    }
+
+    .diploma-corner:nth-of-type(4) {
+      left: 30px;
+      bottom: 30px;
+      border-left: 4px solid;
+      border-bottom: 4px solid;
+    }
+
+    .diploma-content {
+      position: relative;
+      z-index: 4;
+      height: 100%;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      justify-items: center;
+      text-align: center;
+    }
+
+    .diploma-kicker,
+    .diploma-date {
+      color: rgba(255, 232, 165, 0.88);
+      font-size: clamp(12px, 1.25vw, 16px);
+      font-weight: 900;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .diploma-main {
+      align-self: center;
+      max-width: 860px;
+    }
+
+    .diploma-seal {
+      display: grid;
+      width: clamp(74px, 9vw, 106px);
+      aspect-ratio: 1;
+      margin: 0 auto 18px;
+      place-items: center;
+      border-radius: 50%;
+      color: #2a050f;
+      background:
+        radial-gradient(circle at 35% 25%, #fff6c9, transparent 0 28%),
+        linear-gradient(135deg, #ffe9a3, #f7cd7a 54%, #c77727);
+      box-shadow:
+        0 16px 34px rgba(0, 0, 0, 0.25),
+        0 0 0 10px rgba(247, 205, 122, 0.1);
+    }
+
+    .diploma-seal svg {
+      width: 52%;
+      height: 52%;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .diploma-title {
+      margin: 0;
+      color: #fff7d0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(58px, 9vw, 112px);
+      font-weight: 500;
+      line-height: 0.9;
+    }
+
+    .diploma-name {
+      margin: 12px 0 0;
+      color: #f7cd7a;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(34px, 5.4vw, 68px);
+      font-weight: 500;
+      line-height: 1;
+    }
+
+    .diploma-text {
+      max-width: 760px;
+      margin: 22px auto 0;
+      color: rgba(255, 248, 236, 0.9);
+      font-size: clamp(17px, 2vw, 25px);
+      line-height: 1.55;
+    }
+
+    .diploma-awards {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      width: min(100%, 920px);
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .diploma-award {
+      min-height: 54px;
+      padding: 10px 12px;
+      border: 1px solid rgba(255, 232, 165, 0.36);
+      background: rgba(255, 248, 236, 0.065);
+      color: #ffe8a5;
+      display: grid;
+      place-items: center;
+      font-weight: 850;
+      font-size: clamp(12px, 1.3vw, 15px);
+      line-height: 1.25;
+    }
+
+    .diploma-footer {
+      width: min(100%, 880px);
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: end;
+      gap: 22px;
+      color: rgba(255, 248, 236, 0.76);
+      font-size: clamp(12px, 1.2vw, 15px);
+    }
+
+    .diploma-line {
+      display: grid;
+      gap: 7px;
+      text-align: left;
+    }
+
+    .diploma-line:last-child {
+      text-align: right;
+    }
+
+    .diploma-line::before {
+      content: "";
+      height: 1px;
+      background: rgba(255, 232, 165, 0.48);
+    }
+
+    .diploma-footer-mark {
+      color: #f7cd7a;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(26px, 3.2vw, 40px);
+      line-height: 1;
+    }
+
+    body.is-diploma-preview {
+      min-height: 100vh;
+      padding: 24px;
+      background: #ffffff;
+    }
+
+    body.is-diploma-preview > :not(.print-diploma) {
+      display: none !important;
+    }
+
+    body.is-diploma-preview .print-diploma {
+      display: grid;
+      width: min(1120px, calc(100vw - 48px));
+      aspect-ratio: 1.414 / 1;
+      margin: 0 auto;
+      place-items: stretch;
+    }
+
+    body.is-diploma-preview .diploma-paper {
+      display: none;
+    }
+
+    body.is-diploma-preview .diploma-svg {
+      display: block;
+    }
+
     .spotlight {
       position: fixed;
       inset: 0;
@@ -1463,31 +1731,48 @@
 
     }
 
+    @page {
+      size: A4 landscape;
+      margin: 8mm;
+    }
+
     @media print {
+      html,
       body {
+        width: 100%;
+        min-height: 100%;
+        margin: 0 !important;
+        padding: 0 !important;
         background: #fff;
-        color: #111;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
       }
 
-      .topbar,
-      .hero,
-      .section,
-      .letter-section,
-      .final-actions,
-      .toast,
-      .sparkles,
-      .spotlight {
+      body > :not(.print-diploma) {
         display: none !important;
       }
 
-      .award {
-        display: block;
+      .print-diploma {
+        display: grid !important;
+        width: 281mm;
+        height: 194mm;
+        margin: 0 auto;
+        page-break-inside: avoid;
+        place-items: stretch;
       }
 
-      .certificate {
-        color: #2a050f;
-        background: #fff7ed;
-        box-shadow: none;
+      .diploma-paper {
+        display: none;
+      }
+
+      .diploma-svg {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+
+      .diploma-award {
+        break-inside: avoid;
       }
     }
 
@@ -1709,6 +1994,115 @@
       </div>
     </section>
   </main>
+
+  <section class="print-diploma" aria-label="Печатный диплом">
+    <svg class="diploma-svg" viewBox="0 0 1200 849" role="img" aria-labelledby="diplomaSvgTitle diplomaSvgDesc" xmlns="http://www.w3.org/2000/svg">
+      <title id="diplomaSvgTitle">Диплом лучшей маме</title>
+      <desc id="diplomaSvgDesc">Багровый печатный диплом с золотыми рамками и семейными наградами.</desc>
+      <defs>
+        <linearGradient id="diplomaBg" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#26020c"/>
+          <stop offset="0.45" stop-color="#67061d"/>
+          <stop offset="1" stop-color="#31030f"/>
+        </linearGradient>
+        <radialGradient id="diplomaGlow" cx="50%" cy="45%" r="52%">
+          <stop offset="0" stop-color="#ffd67e" stop-opacity="0.23"/>
+          <stop offset="0.43" stop-color="#ffd67e" stop-opacity="0.08"/>
+          <stop offset="1" stop-color="#ffd67e" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="sealGold" cx="35%" cy="24%" r="75%">
+          <stop offset="0" stop-color="#fff6c9"/>
+          <stop offset="0.53" stop-color="#f7cd7a"/>
+          <stop offset="1" stop-color="#c77727"/>
+        </radialGradient>
+        <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+          <feDropShadow dx="0" dy="16" stdDeviation="16" flood-color="#000000" flood-opacity="0.27"/>
+        </filter>
+      </defs>
+      <rect width="1200" height="849" fill="url(#diplomaBg)"/>
+      <rect width="1200" height="849" fill="url(#diplomaGlow)"/>
+      <circle cx="600" cy="425" r="352" fill="none" stroke="#f7cd7a" stroke-opacity="0.15" stroke-width="18"/>
+      <circle cx="600" cy="425" r="334" fill="none" stroke="#f7cd7a" stroke-opacity="0.23" stroke-width="2"/>
+      <rect x="3" y="3" width="1194" height="843" fill="none" stroke="#f7cd7a" stroke-width="6"/>
+      <rect x="22" y="22" width="1156" height="805" fill="none" stroke="#ffe8a5" stroke-opacity="0.75" stroke-width="1.5"/>
+      <rect x="34" y="34" width="1132" height="781" fill="none" stroke="#fff8ec" stroke-opacity="0.22" stroke-width="1"/>
+      <path d="M34 111V34h77M1089 34h77v77M1166 738v77h-77M111 815H34v-77" fill="none" stroke="#fff8ec" stroke-opacity="0.95" stroke-width="4"/>
+      <path d="M75 0v849M1125 0v849M0 64h1200M0 785h1200" stroke="#f7cd7a" stroke-opacity="0.28" stroke-width="1"/>
+
+      <text x="600" y="94" text-anchor="middle" fill="#ffe8a5" font-family="Arial, sans-serif" font-size="17" font-weight="900" letter-spacing="8">СЕМЕЙНАЯ НАГРАДА</text>
+      <g filter="url(#softShadow)">
+        <circle cx="600" cy="175" r="54" fill="url(#sealGold)"/>
+        <path d="M577 146l23 38 23-38M600 184a22 22 0 1 0 0 44 22 22 0 0 0 0-44Z" fill="none" stroke="#2a050f" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M592 207l7 7 13-16" fill="none" stroke="#2a050f" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+      </g>
+
+      <text x="600" y="352" text-anchor="middle" fill="#fff7d0" font-family="Georgia, 'Times New Roman', serif" font-size="104" font-weight="500">Диплом</text>
+      <text x="600" y="431" text-anchor="middle" fill="#f7cd7a" font-family="Georgia, 'Times New Roman', serif" font-size="64" font-weight="500">Лучшей маме</text>
+      <text x="600" y="490" text-anchor="middle" fill="#fff8ec" font-family="Arial, sans-serif" font-size="24">
+        <tspan x="600" dy="0">За самый теплый дом, мудрость, заботу, терпение и сердце, в</tspan>
+        <tspan x="600" dy="38">котором всегда находится место для нас.</tspan>
+      </text>
+
+      <g font-family="Arial, sans-serif" font-size="16" font-weight="900" fill="#ffe8a5" text-anchor="middle">
+        <rect x="170" y="565" width="208" height="54" fill="#fff8ec" fill-opacity="0.055" stroke="#ffe8a5" stroke-opacity="0.38"/>
+        <text x="274" y="598">За заботу</text>
+        <rect x="388" y="565" width="208" height="54" fill="#fff8ec" fill-opacity="0.055" stroke="#ffe8a5" stroke-opacity="0.38"/>
+        <text x="492" y="598">За мудрость</text>
+        <rect x="606" y="565" width="208" height="54" fill="#fff8ec" fill-opacity="0.055" stroke="#ffe8a5" stroke-opacity="0.38"/>
+        <text x="710" y="598">За терпение</text>
+        <rect x="824" y="565" width="208" height="54" fill="#fff8ec" fill-opacity="0.055" stroke="#ffe8a5" stroke-opacity="0.38"/>
+        <text x="928" y="598">За тепло дома</text>
+        <rect x="170" y="630" width="208" height="58" fill="#fff8ec" fill-opacity="0.055" stroke="#ffe8a5" stroke-opacity="0.38"/>
+        <text x="274" y="666">За советы</text>
+        <rect x="388" y="630" width="208" height="58" fill="#fff8ec" fill-opacity="0.055" stroke="#ffe8a5" stroke-opacity="0.38"/>
+        <text x="492" y="666">За выдержку</text>
+        <rect x="606" y="630" width="208" height="58" fill="#fff8ec" fill-opacity="0.055" stroke="#ffe8a5" stroke-opacity="0.38"/>
+        <text x="710" y="666">За внимание</text>
+        <rect x="824" y="630" width="208" height="58" fill="#fff8ec" fill-opacity="0.055" stroke="#ffe8a5" stroke-opacity="0.38"/>
+        <text x="928" y="655" font-size="15">За каждый спокойный</text>
+        <text x="928" y="676" font-size="15">день</text>
+      </g>
+
+      <line x1="92" y1="744" x2="528" y2="744" stroke="#ffe8a5" stroke-opacity="0.5"/>
+      <line x1="673" y1="744" x2="1108" y2="744" stroke="#ffe8a5" stroke-opacity="0.5"/>
+      <text x="92" y="769" fill="#fff8ec" fill-opacity="0.83" font-family="Arial, sans-serif" font-size="15">Дата вручения: 14.05.2026</text>
+      <text x="600" y="767" text-anchor="middle" fill="#f7cd7a" font-family="Georgia, 'Times New Roman', serif" font-size="40">Маме</text>
+      <text x="1108" y="769" text-anchor="end" fill="#fff8ec" fill-opacity="0.83" font-family="Arial, sans-serif" font-size="15">Подпись: от сына</text>
+    </svg>
+    <div class="diploma-paper">
+      <div class="diploma-ornament" aria-hidden="true"></div>
+      <span class="diploma-corner" aria-hidden="true"></span>
+      <span class="diploma-corner" aria-hidden="true"></span>
+      <span class="diploma-corner" aria-hidden="true"></span>
+      <span class="diploma-corner" aria-hidden="true"></span>
+      <div class="diploma-content">
+        <div class="diploma-kicker">Семейная награда</div>
+        <div class="diploma-main">
+          <div class="diploma-seal" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="m8 3 4 7 4-7M12 10a5 5 0 1 0 0 10 5 5 0 0 0 0-10Z"/><path d="m10.5 15 1 1 2-2"/></svg>
+          </div>
+          <h2 class="diploma-title">Диплом</h2>
+          <p class="diploma-name">Лучшей маме</p>
+          <p class="diploma-text">За самый теплый дом, мудрость, заботу, терпение и сердце, в котором всегда находится место для нас.</p>
+          <div class="diploma-awards" aria-label="Награды в дипломе">
+            <div class="diploma-award">За заботу</div>
+            <div class="diploma-award">За мудрость</div>
+            <div class="diploma-award">За терпение</div>
+            <div class="diploma-award">За тепло дома</div>
+            <div class="diploma-award">За советы</div>
+            <div class="diploma-award">За выдержку</div>
+            <div class="diploma-award">За внимание</div>
+            <div class="diploma-award">За каждый спокойный день</div>
+          </div>
+        </div>
+        <div class="diploma-footer">
+          <div class="diploma-line"><span>Дата вручения: 14.05.2026</span></div>
+          <div class="diploma-footer-mark">Маме</div>
+          <div class="diploma-line"><span>Подпись: от сына</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
   <div class="spotlight" id="spotlight" role="dialog" aria-modal="true" aria-labelledby="spotlightTitle">
@@ -2010,7 +2404,10 @@
       showToast('Обнимаю крепко. Спасибо, что ты у меня есть.');
     });
 
-    document.querySelector('#printButton').addEventListener('click', () => window.print());
+    document.querySelector('#printButton').addEventListener('click', () => {
+      showToast('Откроется печать отдельного диплома.');
+      window.setTimeout(() => window.print(), 120);
+    });
 
     window.addEventListener('keydown', (event) => {
       if (event.key === 'Escape') spotlight.classList.remove('is-open');
